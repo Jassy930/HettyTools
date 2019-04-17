@@ -25,5 +25,15 @@ namespace HettyTools
         {
             InitializeComponent();
         }
+
+        private void HamburgerMenuControl_OnItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
+        {
+            HamburgerMenuControl.Content = e.InvokedItem;
+        }
+
+        private void LaunchMahAppsOnGitHub(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Jassy930/HettyTools");
+        }
     }
 }
