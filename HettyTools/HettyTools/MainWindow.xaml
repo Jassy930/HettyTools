@@ -185,7 +185,7 @@
 
         <ScrollViewer Grid.Column="1"
                       MinWidth="230"
-                      Margin="10 10 5 10"
+                      Margin="10 10 10 10"
                       Padding="0 0 5 0"
                       HorizontalContentAlignment="Stretch"
                       Visibility="Collapsed"
@@ -248,7 +248,7 @@
         </ScrollViewer>
 
         <Border Grid.Column="0"
-                Margin="10 10 0 10"
+                Margin="10 10 10 10"
                 BorderBrush="{DynamicResource GrayBrush7}"
                 BorderThickness="1">
 
@@ -274,7 +274,10 @@
                                 <metroDemo:Handle_Compiler_Warnings />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
-                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Octicons Kind=Briefcase}" Label="Briefcase">
+                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Hammer}" Label="Compiler Warnings">
+                            <Controls:HamburgerMenuIconItem.Tag>
+                                <metroDemo:Handle_Compiler_Warnings />
+                            </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
                     </Controls:HamburgerMenuItemCollection>
                 </Controls:HamburgerMenu.ItemsSource>

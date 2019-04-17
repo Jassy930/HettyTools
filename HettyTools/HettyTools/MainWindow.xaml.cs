@@ -33,7 +33,7 @@ namespace HettyTools
 
         private void LaunchMahAppsOnGitHub(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/Jassy930/HettyTools");
+            System.Diagnostics.Process.Start("https://github.com/Jassy930/HettyTools/releases/");
         }
     }
 }
