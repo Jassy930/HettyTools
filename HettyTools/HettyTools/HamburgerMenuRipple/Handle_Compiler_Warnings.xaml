@@ -9,7 +9,7 @@
              mc:Ignorable="d">
     <StackPanel>
         <StackPanel Orientation="Horizontal">
-            <TextBlock FontSize="18" Margin="5">Vob:</TextBlock>
+            <TextBlock FontSize="18" Margin="10,5">Vob:</TextBlock>
 
             <TextBox Margin="5"
                      Width="240"
@@ -33,12 +33,16 @@
             </TextBox>
         </StackPanel>
 
-        <Image MaxWidth="800"
-               Margin="0 10 0 0"
-               HorizontalAlignment="Left"
-               VerticalAlignment="Top"
-               Source="/Assets/img/test.png"
-               Stretch="Uniform" />
-        <TextBlock Text="Image from StockSnap.io" />
+        <Grid>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="g" Margin="10,50" Width="300" Height="400">
+                <Canvas>
+                    <Rectangle RadiusX="2" RadiusY="2"
+                               Width="{Binding ElementName=g, Path=ActualWidth}"
+                               Height="{Binding ElementName=g, Path=ActualHeight}"
+                               Stroke="Gray" StrokeDashArray="2,2,2,2" StrokeThickness="2"/>
+                </Canvas>
+                <TextBlock Margin="10" Text="Drag your Compiler File Here..." HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+        </Grid>
     </StackPanel>
 </UserControl>

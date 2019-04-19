@@ -7,12 +7,6 @@
              d:DesignWidth="300"
              mc:Ignorable="d">
     <StackPanel>
-        <Image MaxWidth="800"
-               Margin="0 10 0 0"
-               HorizontalAlignment="Left"
-               VerticalAlignment="Top"
-               Source="/Assets/Photos/Home.jpg"
-               Stretch="Uniform" />
-        <TextBlock Text="Image from StockSnap.io" />
+        <TextBlock Text="Love you." />
     </StackPanel>
 </UserControl>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MahApps.Metro;
 using MahApps.Metro.Controls;
 
 namespace HettyTools
@@ -21,6 +22,7 @@ namespace HettyTools
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,9 +33,29 @@ namespace HettyTools
             HamburgerMenuControl.Content = e.InvokedItem;
         }
 
-        private void LaunchMahAppsOnGitHub(object sender, RoutedEventArgs e)
+        private void LaunchNewRelease(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/Jassy930/HettyTools/releases/");
+        }
+
+        private void Theme_L_D_Click(object sender, RoutedEventArgs e)
+        {
+            if (Properties.Settings.Default.BaseTheme == "Light")
+            {
+                ThemeManager.ChangeThemeBaseColor(Application.Current, "Dark");
+                Properties.Settings.Default.BaseTheme = "Dark";
+            }
+            else
+            {
+                ThemeManager.ChangeThemeBaseColor(Application.Current, "Light");
+                Properties.Settings.Default.BaseTheme = "Light";
+            }
+            Properties.Settings.Default.Save();
+        }
+
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            ThemeManager.ChangeThemeBaseColor(Application.Current, Properties.Settings.Default.BaseTheme);
         }
     }
 }
