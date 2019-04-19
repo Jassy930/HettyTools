@@ -55,7 +55,7 @@ namespace HettyTools
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            ThemeManager.ChangeThemeBaseColor(Application.Current, Properties.Settings.Default.BaseTheme);
+            ThemeManager.ChangeTheme(Application.Current, Properties.Settings.Default.BaseTheme, Properties.Settings.Default.Accent);
         }
     }
 }
