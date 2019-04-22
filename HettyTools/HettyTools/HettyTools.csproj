@@ -77,6 +77,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="HamburgerMenuRipple\StatusView.xaml.cs" />
     <Page Include="HamburgerMenuRipple\Handle_Compiler_Warnings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -97,7 +98,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="HamburgerMenuRipple\Handle_Compiler_Warnings.cs" />
+    <Compile Include="HTViewModel.cs" />
+    <Compile Include="HamburgerMenuRipple\Handle_Compiler_Warnings.xaml.cs" />
     <Compile Include="HamburgerMenuRipple\HomeView.xaml.cs" />
     <Compile Include="HamburgerMenuRipple\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
@@ -107,6 +109,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="HamburgerMenuRipple\StatusView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

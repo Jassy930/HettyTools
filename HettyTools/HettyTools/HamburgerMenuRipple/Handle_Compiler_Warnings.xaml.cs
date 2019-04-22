@@ -2,12 +2,11 @@
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows;
+using System;
 
 namespace MetroDemo
 {
-    /// <summary>
-    /// Interaction logic for AboutView.xaml
-    /// </summary>
     public partial class Handle_Compiler_Warnings : UserControl
     {
         public Handle_Compiler_Warnings()
@@ -20,7 +19,7 @@ namespace MetroDemo
         {
             string outfile = filename + ".txt";
 
-            string vob = "vob";
+            string vob = "";
 
             StreamReader sr = new StreamReader(filename, Encoding.Default);
             StreamWriter sw = File.CreateText(outfile);
@@ -65,6 +64,51 @@ namespace MetroDemo
             //Console.WriteLine("Wish you a happy day~~~");
 
             //Console.ReadLine();
+            
         }
+
+        private void Grid_Drop(object sender, System.Windows.DragEventArgs e)
+        {
+            if (!e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                return;
+            }
+
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            if (files.Length > 0 && (e.AllowedEffects & DragDropEffects.Copy) == DragDropEffects.Copy)
+            {
+                e.Effects = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effects = DragDropEffects.None;
+            }
+
+            foreach (string file in files)
+            {
+                try
+                {
+                    switch (e.Effects)
+                    {
+                        case DragDropEffects.Copy:
+                            Handle(file);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
+
+        //private void Grid_DragOver(object sender, DragEventArgs e)
+        //{
+        //    e.Effects = DragDropEffects.Copy;
+        //}
     }
 }

@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-             d:DesignHeight="300"
+             d:DesignHeight="500"
              d:DesignWidth="300"
              mc:Ignorable="d" Loaded="UserControl_Loaded">
 

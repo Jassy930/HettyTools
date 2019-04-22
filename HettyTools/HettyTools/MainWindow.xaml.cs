@@ -22,10 +22,17 @@ namespace HettyTools
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        HTViewModel ht = new HTViewModel();
 
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = ht;
+        }
+
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            ThemeManager.ChangeTheme(Application.Current, Properties.Settings.Default.BaseTheme, Properties.Settings.Default.Accent);
         }
 
         private void HamburgerMenuControl_OnItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
@@ -51,11 +58,6 @@ namespace HettyTools
                 Properties.Settings.Default.BaseTheme = "Light";
             }
             Properties.Settings.Default.Save();
-        }
-
-        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            ThemeManager.ChangeTheme(Application.Current, Properties.Settings.Default.BaseTheme, Properties.Settings.Default.Accent);
         }
     }
 }
