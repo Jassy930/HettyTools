@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro;
 using MahApps.Metro.Controls;
+using System.Windows.Forms;
 
 namespace HettyTools
 {
@@ -23,16 +24,52 @@ namespace HettyTools
     public partial class MainWindow : MetroWindow
     {
         HTViewModel ht = new HTViewModel();
+        NotifyIcon notifyIcon;
 
         public MainWindow()
         {
             InitializeComponent();
             this.DataContext = ht;
+            NotifyIcon_Init();
+        }
+
+        private void NotifyIcon_Init()
+        {
+            SystemTrayParameter pars = new SystemTrayParameter("ico/cat_black.ico", "Standing by", "", 0, notifyIcon_MouseDoubleClick);
+            this.notifyIcon = SystemTray.SetSystemTray(pars, GetList());
+            this.notifyIcon.Visible = true;
+            //WinCommon.WinBaseSet(this);
+        }
+
+        private List<SystemTrayMenu> GetList()
+        {
+            List<SystemTrayMenu> ls = new List<SystemTrayMenu>();
+            ls.Add(new SystemTrayMenu() { Txt = "打开主面板", Icon = "", Click = mainWin_Click });
+            ls.Add(new SystemTrayMenu() { Txt = "退出", Icon = "ico/cat_mb.ico", Click = exit_Click });
+            return ls;
+        }
+
+        void notifyIcon_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            this.Show();
+            //this.notifyIcon.Visible = false;
+        }
+
+        void mainWin_Click(object sender, EventArgs e)
+        {
+            this.Show();
+            //this.notifyIcon.Visible = false;
+        }
+
+        void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            System.Windows.Application.Current.Shutdown();
         }
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            ThemeManager.ChangeTheme(Application.Current, Properties.Settings.Default.BaseTheme, Properties.Settings.Default.Accent);
+            ThemeManager.ChangeTheme(System.Windows.Application.Current, Properties.Settings.Default.BaseTheme, Properties.Settings.Default.Accent);
         }
 
         private void HamburgerMenuControl_OnItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
@@ -49,12 +86,12 @@ namespace HettyTools
         {
             if (Properties.Settings.Default.BaseTheme == "Light")
             {
-                ThemeManager.ChangeThemeBaseColor(Application.Current, "Dark");
+                ThemeManager.ChangeThemeBaseColor(System.Windows.Application.Current, "Dark");
                 Properties.Settings.Default.BaseTheme = "Dark";
             }
             else
             {
-                ThemeManager.ChangeThemeBaseColor(Application.Current, "Light");
+                ThemeManager.ChangeThemeBaseColor(System.Windows.Application.Current, "Light");
                 Properties.Settings.Default.BaseTheme = "Light";
             }
             Properties.Settings.Default.Save();
