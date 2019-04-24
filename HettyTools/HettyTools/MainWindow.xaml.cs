@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using MahApps.Metro;
 using MahApps.Metro.Controls;
 using System.Windows.Forms;
+using AutoUpdaterDotNET;
 
 namespace HettyTools
 {
@@ -30,7 +31,13 @@ namespace HettyTools
         {
             InitializeComponent();
             this.DataContext = ht;
-            NotifyIcon_Init();
+            //NotifyIcon_Init();
+
+            AutoUpdater.ReportErrors = true;
+            AutoUpdater.ShowSkipButton = false;
+            AutoUpdater.ShowRemindLaterButton = false;
+            AutoUpdater.Mandatory = true;
+            AutoUpdater.UpdateMode = Mode.Forced;
         }
 
         private void NotifyIcon_Init()
@@ -79,7 +86,8 @@ namespace HettyTools
 
         private void LaunchNewRelease(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/Jassy930/HettyTools/releases/");
+            AutoUpdater.Start("http://127.0.0.1:4000/assets/release/Version.xml");
+            //System.Diagnostics.Process.Start("https://github.com/Jassy930/HettyTools/releases/");
         }
 
         private void Theme_L_D_Click(object sender, RoutedEventArgs e)

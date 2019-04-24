@@ -160,5 +160,8 @@
     <Resource Include="Assets\ico\cat_mb.ico" />
     <Resource Include="Assets\ico\cat_white.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Version.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
