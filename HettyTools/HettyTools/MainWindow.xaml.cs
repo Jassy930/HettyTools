@@ -33,7 +33,7 @@ namespace HettyTools
             this.DataContext = ht;
             //NotifyIcon_Init();
 
-            AutoUpdater.ReportErrors = true;
+            //AutoUpdater.ReportErrors = true;
             AutoUpdater.ShowSkipButton = false;
             AutoUpdater.ShowRemindLaterButton = false;
             AutoUpdater.Mandatory = true;
@@ -77,6 +77,7 @@ namespace HettyTools
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
             ThemeManager.ChangeTheme(System.Windows.Application.Current, Properties.Settings.Default.BaseTheme, Properties.Settings.Default.Accent);
+            AutoUpdater.Start("https://blog.jassy.wang/release/Version.xml");
         }
 
         private void HamburgerMenuControl_OnItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
@@ -86,7 +87,7 @@ namespace HettyTools
 
         private void LaunchNewRelease(object sender, RoutedEventArgs e)
         {
-            AutoUpdater.Start("http://127.0.0.1:4000/assets/release/Version.xml");
+            AutoUpdater.Start("https://blog.jassy.wang/release/Version.xml");
             //System.Diagnostics.Process.Start("https://github.com/Jassy930/HettyTools/releases/");
         }
 
