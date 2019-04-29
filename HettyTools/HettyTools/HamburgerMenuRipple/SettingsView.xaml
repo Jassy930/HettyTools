@@ -36,7 +36,12 @@
             </Style>
         </ResourceDictionary>
     </UserControl.Resources>
-    <StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+    <StackPanel Grid.Row="0">
         <TextBlock FontSize="18">Themes:</TextBlock>
         <WrapPanel Orientation="Horizontal" x:Name="ThemesPanel">
         </WrapPanel>
@@ -48,4 +53,9 @@
                Stretch="Uniform" 
                Visibility="Collapsed"/>
     </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <iconPacks:PackIconMaterial Kind="InformationOutline" Margin="10"/>
+            <TextBlock x:Name="tb_Version" TextAlignment="Left" Margin="0,10,10,10"/>
+        </StackPanel>
+    </Grid>
 </UserControl>

@@ -15,6 +15,8 @@ namespace MetroDemo
         public SettingsView()
         {
             InitializeComponent();
+
+            tb_Version.Text="Version:  " +System.Windows.Application.ResourceAssembly.GetName().Version.ToString();
         }
 
         private void ChangeThemeStyle(object sender, System.Windows.RoutedEventArgs e)

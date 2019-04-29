@@ -211,12 +211,12 @@
                                 <metroDemo:HomeView />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
-                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=AccountCircle}" Label="Private">
+                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=AutoFix}" Label="Tools">
                             <Controls:HamburgerMenuIconItem.Tag>
-                                <metroDemo:Handle_Compiler_Warnings />
+                                <metroDemo:CommonTools />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
-                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Hammer}" Label="Compiler Warnings">
+                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Hammer}" Label="Build Errors">
                             <Controls:HamburgerMenuIconItem.Tag>
                                 <metroDemo:Handle_Compiler_Warnings />
                             </Controls:HamburgerMenuIconItem.Tag>
