@@ -262,7 +262,7 @@
 
         </Border>
 
-        <metroDemo:StatusView Grid.Row="1" Grid.Column="0"/>
+        <!--<metroDemo:StatusView Grid.Row="1" Grid.Column="0"/>-->
     </Grid>
 
 </Controls:MetroWindow>

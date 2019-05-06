@@ -34,8 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>witch_128px_1232531_easyicon.net.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoUpdater.NET, Version=1.5.1.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
@@ -161,9 +160,10 @@
     <Resource Include="Assets\img\test.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\ico\cat_black.ico" />
-    <Resource Include="Assets\ico\cat_mb.ico" />
-    <Resource Include="Assets\ico\cat_white.ico" />
+    <Resource Include="Assets\ico\witch_128px_1232531_easyicon.net.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="witch_128px_1232531_easyicon.net.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
