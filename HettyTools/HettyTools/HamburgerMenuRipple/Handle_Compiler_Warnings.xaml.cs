@@ -15,11 +15,11 @@ namespace MetroDemo
         }
 
 
-        static void Handle(string filename)
+        void CWHandle(string filename)
         {
             string outfile = filename + ".txt";
 
-            string vob = "";
+            string vob = CWvobtextbox.Text;
 
             StreamReader sr = new StreamReader(filename, Encoding.Default);
             StreamWriter sw = File.CreateText(outfile);
@@ -92,7 +92,7 @@ namespace MetroDemo
                     switch (e.Effects)
                     {
                         case DragDropEffects.Copy:
-                            Handle(file);
+                            CWHandle(file);
                             break;
                         default:
                             break;

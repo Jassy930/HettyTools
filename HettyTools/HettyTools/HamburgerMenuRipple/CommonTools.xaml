@@ -10,6 +10,22 @@
     <StackPanel>
         <StackPanel>
             <TextBlock Text="HEX2float"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="HEX:" Margin="5"/>
+                <TextBox x:Name="HFChbox" Grid.Row="0" Grid.Column="1" Margin="5" KeyUp="HFChbox_KeyUp"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="float:" Margin="5"/>
+                <TextBox x:Name="HFCfbox" Grid.Row="1" Grid.Column="1" Margin="5" KeyUp="HFCfbox_KeyUp"/>
+            </Grid>
+            
+            
             <TextBlock Text="check B-num value"/>
         </StackPanel>
     </StackPanel>
