@@ -17,9 +17,9 @@ namespace HettyTools
             InitializeComponent();
 
             //funwindows
-            logchart = new LogChartWindow();
-            logchart.ApplyTemplate();
-            logchart.Closed += (o, e) => logchart = null;
+            //logchart = new LogChartWindow("");
+            //logchart.ApplyTemplate();
+            //logchart.Closed += (o, e) => logchart = null;
 
             //Closing += (s, e) =>
             //{
@@ -87,7 +87,8 @@ namespace HettyTools
         {
             if (logchart == null)
             {
-                logchart = new LogChartWindow();
+                logchart = new LogChartWindow("C:\\Users\\Lenovo\\Documents\\code\\hetty\\test_file\\57_58_79.log.log.csv");
+                //logchart.setlogfilename("C:\\Users\\Lenovo\\Documents\\code\\hetty\\test_file\\57_58_79.log.log.csv");
                 logchart.Closed += (o, args) => logchart = null;
             }
             logchart.Show();
