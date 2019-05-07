@@ -14,15 +14,17 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="HEX:" Margin="5"/>
-                <TextBox x:Name="HFChbox" Grid.Row="0" Grid.Column="1" Margin="5" KeyUp="HFChbox_KeyUp"/>
+                <TextBox x:Name="HFChbox" Grid.Row="0" Grid.Column="1" Margin="5" TextChanged="HFChbox_TextChanged"/>
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="float:" Margin="5"/>
-                <TextBox x:Name="HFCfbox" Grid.Row="1" Grid.Column="1" Margin="5" KeyUp="HFCfbox_KeyUp"/>
+                <TextBox x:Name="HFCfbox" Grid.Row="1" Grid.Column="1" Margin="5" TextChanged="HFCfbox_TextChanged"/>
+                <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Text="for log file:" Margin="5" />
             </Grid>
             
             
