@@ -38,8 +38,10 @@ namespace HettyTools
             AutoUpdater.ShowRemindLaterButton = false;
             AutoUpdater.Mandatory = true;
             AutoUpdater.UpdateMode = Mode.Forced;
+
         }
 
+        #region notifyIcon
         private void NotifyIcon_Init()
         {
             SystemTrayParameter pars = new SystemTrayParameter("ico/cat_black.ico", "Standing by", "", 0, notifyIcon_MouseDoubleClick);
@@ -73,6 +75,7 @@ namespace HettyTools
             this.Close();
             System.Windows.Application.Current.Shutdown();
         }
+        #endregion
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {

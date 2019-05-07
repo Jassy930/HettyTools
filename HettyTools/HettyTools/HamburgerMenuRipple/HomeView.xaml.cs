@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace MetroDemo
+namespace HettyTools
 {
     /// <summary>
     /// Interaction logic for AboutView.xaml

@@ -4,15 +4,30 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System;
+using HettyTools.FunWindows;
 
-namespace MetroDemo
+namespace HettyTools
 {
     public partial class CommonTools : UserControl
     {
         bool HFCchangelock = false;
+        LogChartWindow logchart;
         public CommonTools()
         {
             InitializeComponent();
+
+            //funwindows
+            logchart = new LogChartWindow();
+            logchart.ApplyTemplate();
+            logchart.Closed += (o, e) => logchart = null;
+
+            //Closing += (s, e) =>
+            //{
+            //    if (!e.Cancel && logchart != null)
+            //    {
+            //        logchart.Close();
+            //    }
+            //};
         }
 
         private void HFChbox_TextChanged(object sender, TextChangedEventArgs e)
@@ -66,6 +81,16 @@ namespace MetroDemo
             {
                 HFCchangelock = false;
             }
+        }
+
+        private void LaunchLogChartWindow(object sender, RoutedEventArgs e)
+        {
+            if (logchart == null)
+            {
+                logchart = new LogChartWindow();
+                logchart.Closed += (o, args) => logchart = null;
+            }
+            logchart.Show();
         }
     }
 }
