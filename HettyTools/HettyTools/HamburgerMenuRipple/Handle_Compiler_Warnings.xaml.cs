@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System;
 
-namespace MetroDemo
+namespace HettyTools
 {
     public partial class Handle_Compiler_Warnings : UserControl
     {

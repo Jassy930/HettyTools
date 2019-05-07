@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MetroDemo.CommonTools"
+﻿<UserControl x:Class="HettyTools.CommonTools"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
@@ -9,9 +9,10 @@
              mc:Ignorable="d">
     <StackPanel>
         <StackPanel>
-            <TextBlock Text="HEX2float"/>
+            <TextBlock Text="HEX2float" FontWeight="Bold" />
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
@@ -19,14 +20,18 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="HEX:" Margin="5"/>
-                <TextBox x:Name="HFChbox" Grid.Row="0" Grid.Column="1" Margin="5" KeyUp="HFChbox_KeyUp"/>
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="float:" Margin="5"/>
-                <TextBox x:Name="HFCfbox" Grid.Row="1" Grid.Column="1" Margin="5" KeyUp="HFCfbox_KeyUp"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="HEX:" Margin="5" VerticalAlignment="Center"/>
+                <TextBox x:Name="HFChbox" Grid.Row="0" Grid.Column="1" Margin="5" TextChanged="HFChbox_TextChanged"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="float:" Margin="5" VerticalAlignment="Center"/>
+                <TextBox x:Name="HFCfbox" Grid.Row="1" Grid.Column="1" Margin="5" TextChanged="HFCfbox_TextChanged"/>
+                <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal">
+                    <TextBlock Text="for log file:" Margin="5" VerticalAlignment="Center"/>
+                    <Button Content="Magic Button" Margin="5" Click="LaunchLogChartWindow" />
+                </StackPanel>
             </Grid>
             
             
-            <TextBlock Text="check B-num value"/>
+            <TextBlock Text="check B-num value" FontWeight="Bold"/>
         </StackPanel>
     </StackPanel>
 </UserControl>

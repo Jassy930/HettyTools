@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:HettyTools"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
-        xmlns:metroDemo="clr-namespace:MetroDemo"
+        xmlns:metroDemo="clr-namespace:HettyTools"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:materialDesignConverters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf"
         Title="HettyTools" Height="800" Width="640" Loaded="MetroWindow_Loaded">
@@ -208,17 +208,17 @@
                     <Controls:HamburgerMenuItemCollection>
                         <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Home}" Label="Home">
                             <Controls:HamburgerMenuIconItem.Tag>
-                                <metroDemo:HomeView />
+                                <local:HomeView />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
                         <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=AutoFix}" Label="Tools">
                             <Controls:HamburgerMenuIconItem.Tag>
-                                <metroDemo:CommonTools />
+                                <local:CommonTools />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
                         <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Hammer}" Label="Build Errors">
                             <Controls:HamburgerMenuIconItem.Tag>
-                                <metroDemo:Handle_Compiler_Warnings />
+                                <local:Handle_Compiler_Warnings />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
                     </Controls:HamburgerMenuItemCollection>
@@ -229,7 +229,7 @@
                     <Controls:HamburgerMenuItemCollection>
                         <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Settings}" Label="Settings">
                             <Controls:HamburgerMenuIconItem.Tag>
-                                <metroDemo:SettingsView/>
+                                <local:SettingsView/>
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
                     </Controls:HamburgerMenuItemCollection>

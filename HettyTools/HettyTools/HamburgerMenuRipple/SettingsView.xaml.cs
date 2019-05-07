@@ -5,7 +5,7 @@ using MahApps.Metro.Controls;
 using System;
 using System.Windows.Input;
 
-namespace MetroDemo
+namespace HettyTools
 {
     /// <summary>
     /// Interaction logic for AboutView.xaml
