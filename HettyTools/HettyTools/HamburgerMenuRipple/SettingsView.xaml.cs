@@ -29,6 +29,7 @@ namespace HettyTools
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            ThemesPanel.Children.Clear();
             foreach (ColorScheme o in ThemeManager.ColorSchemes)
             {
                 Tile tt = new Tile();
