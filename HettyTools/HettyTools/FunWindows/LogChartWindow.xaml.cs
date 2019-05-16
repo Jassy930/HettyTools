@@ -124,7 +124,7 @@ namespace HettyTools.FunWindows
 
             for (int i = 0; i < ld.datanum; i++)
             {
-                if (i != 3)
+                if (i != 3 && i!=6)
                 {
                     var ls = new LineSeries
                     {
@@ -132,6 +132,7 @@ namespace HettyTools.FunWindows
                         Fill = Brushes.Transparent,
                         StrokeThickness = 2.5,
                         PointGeometry = null,
+                        Title = ld.dataname[i],
                     };
                     Binding bb = new Binding("visb");
                     ls.SetBinding(LineSeries.VisibilityProperty, bb);
@@ -169,7 +170,7 @@ namespace HettyTools.FunWindows
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //chart.Series[2].IsSeriesVisible
+            chart.Series = getseries();
         }
     }
 

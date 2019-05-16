@@ -85,6 +85,7 @@ namespace HettyTools
 
         private void LaunchLogChartWindow(object sender, RoutedEventArgs e)
         {
+            return;
             if (logchart == null)
             {
                 logchart = new LogChartWindow("C:\\Users\\Lenovo\\Documents\\code\\hetty\\test_file\\57_58_79.log.log.csv");
