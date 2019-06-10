@@ -1,4 +1,12 @@
 ﻿
+Release v0.1.4.0 WebBrowser
+----------
+1. Change dotNet Ver 4.5 to Ver 4.6.
+2. Add a CefSharp WebBrowser in HomeView.
+3. Add a changelog.md file.(this one)
+4. Add ignore filefolder for testfiles. (for develop)
+5. Try to add a home html in hexoblog to show in this view. (jassy github page)
+
 Release v0.1.3.0 HEX2float
 ----------
 1. HEX2float fun.
