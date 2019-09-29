@@ -16,6 +16,9 @@ using MahApps.Metro;
 using MahApps.Metro.Controls;
 using System.Windows.Forms;
 using AutoUpdaterDotNET;
+using System.Timers;
+using System.IO;
+using System.Threading;
 
 namespace HettyTools
 {
@@ -26,6 +29,8 @@ namespace HettyTools
     {
         HTViewModel ht = new HTViewModel();
         NotifyIcon notifyIcon;
+        System.Timers.Timer GREtimer = new System.Timers.Timer();
+        List<string> GREwords = new List<string>();
 
         public MainWindow()
         {
@@ -39,6 +44,22 @@ namespace HettyTools
             AutoUpdater.Mandatory = true;
             AutoUpdater.UpdateMode = Mode.Forced;
 
+            //GREtimer
+
+            GREtimer.Elapsed += new ElapsedEventHandler(GRETimerHandle);
+            GREtimer.Interval = 30000;
+            GREtimer.Enabled = true;
+            GREtimer.Start();
+
+            StreamReader sr = new StreamReader("gre.words");
+            string line = string.Empty;
+            line = sr.ReadLine();
+            while (line!= null)
+            {
+                GREwords.Add(line);
+                line = sr.ReadLine();
+            }
+            sr.Close();
         }
 
         #region notifyIcon
@@ -107,6 +128,31 @@ namespace HettyTools
                 Properties.Settings.Default.BaseTheme = "Light";
             }
             Properties.Settings.Default.Save();
+        }
+
+        private void GRETimerHandle(object sender, ElapsedEventArgs e)
+        {
+            GREnextHandle(null, null);
+        }
+
+        private void GREyoudao_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://dict.youdao.com/w/eng/"+GREbar.Text.Split(' ')[0]);
+        }
+
+        private void GREnextHandle(object sender, EventArgs e)
+        {
+            //TODO: reset timer of GREtimer
+            Random r = new Random();
+            int k = r.Next(0, GREwords.Count);
+
+            new Thread(() =>
+            {
+                this.GREbar.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    GREbar.Text = GREwords[k];
+                }));
+            }).Start();
         }
     }
 }

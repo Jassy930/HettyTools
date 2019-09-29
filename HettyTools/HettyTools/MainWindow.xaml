@@ -262,6 +262,22 @@
 
         </Border>
 
+        <Border Grid.Column="0" Grid.Row="1"
+                Margin="10 0 10 10"
+                BorderBrush="{DynamicResource GrayBrush7}"
+                BorderThickness="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" x:Name="GREbar" Margin="2" FontSize="22" FontFamily="Microsoft YaHei UI">GRE 爱你呦~~</TextBlock>
+                <Button Grid.Column="1" x:Name="GREyoudao" Margin="2" BorderThickness="0" Click="GREyoudao_Click">Youdao</Button>
+                <Button Grid.Column="2" x:Name="GREnext" Margin="2" BorderThickness="0" Click="GREnextHandle">NEXT</Button>
+            </Grid>
+
+        </Border>
         <!--<metroDemo:StatusView Grid.Row="1" Grid.Column="0"/>-->
     </Grid>
 
