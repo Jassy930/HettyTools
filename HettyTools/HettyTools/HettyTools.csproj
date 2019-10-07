@@ -142,12 +142,17 @@
     <Compile Include="FunWindows\LogChartWindow.xaml.cs">
       <DependentUpon>LogChartWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HamburgerMenuRipple\YouDao.xaml.cs" />
     <Compile Include="HamburgerMenuRipple\CommonTools.xaml.cs" />
     <Compile Include="HamburgerMenuRipple\StatusView.xaml.cs" />
     <Compile Include="SystemTray.cs" />
     <Page Include="FunWindows\LogChartWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HamburgerMenuRipple\YouDao.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="HamburgerMenuRipple\CommonTools.xaml">
       <Generator>MSBuild:Compile</Generator>

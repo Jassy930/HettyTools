@@ -221,6 +221,11 @@
                                 <local:Handle_Compiler_Warnings />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
+                        <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Dictionary}" Label="YouDao">
+                            <Controls:HamburgerMenuIconItem.Tag>
+                                <local:YouDao x:Name="youdaopage" />
+                            </Controls:HamburgerMenuIconItem.Tag>
+                        </Controls:HamburgerMenuIconItem>
                     </Controls:HamburgerMenuItemCollection>
                 </Controls:HamburgerMenu.ItemsSource>
 

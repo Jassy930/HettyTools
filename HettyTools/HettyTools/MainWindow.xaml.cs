@@ -137,7 +137,9 @@ namespace HettyTools
 
         private void GREyoudao_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("http://dict.youdao.com/w/eng/"+GREbar.Text.Split(' ')[0]);
+            HamburgerMenuControl.SelectedIndex = 3;
+            youdaopage.Word_Search(GREbar.Text.Split(' ')[0]);
+            //System.Diagnostics.Process.Start("http://dict.youdao.com/w/eng/"+GREbar.Text.Split(' ')[0]);
         }
 
         private void GREnextHandle(object sender, EventArgs e)
