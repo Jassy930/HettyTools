@@ -19,6 +19,7 @@ using AutoUpdaterDotNET;
 using System.Timers;
 using System.IO;
 using System.Threading;
+using System.Data.SQLite;
 
 namespace HettyTools
 {
@@ -31,6 +32,8 @@ namespace HettyTools
         NotifyIcon notifyIcon;
         System.Timers.Timer GREtimer = new System.Timers.Timer();
         List<string> GREwords = new List<string>();
+        static string DBPath = "db";
+        SQLiteConnection dbconn = null;
 
         public MainWindow()
         {
@@ -155,6 +158,40 @@ namespace HettyTools
                     GREbar.Text = GREwords[k];
                 }));
             }).Start();
+        }
+
+        private void MetroWindow_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (false && e.Key.ToString() == "F9")
+            {
+                if (this.dbconn == null)
+                {
+                    if (!string.IsNullOrEmpty(DBPath) && !Directory.Exists(DBPath))
+                    {
+                        Directory.CreateDirectory(DBPath);
+                    }
+                    var dbFilePath = System.IO.Path.Combine(DBPath, "database.db");
+                    this.dbconn = new SQLiteConnection("DataSource = "+dbFilePath);
+                }
+                if (this.dbconn.State != System.Data.ConnectionState.Open)
+                {
+                    this.dbconn.Open();
+                }
+                
+                using (var tr = this.dbconn.BeginTransaction())
+                {
+                    using (var cmd = this.dbconn.CreateCommand())
+                    {
+                        cmd.CommandText = "";
+                        cmd.ExecuteNonQuery();
+                    }
+                    tr.Commit();
+                }
+                int b = 0;
+                int a = 10 / b;
+                System.Windows.MessageBox.Show(a.ToString());
+
+            }
         }
     }
 }

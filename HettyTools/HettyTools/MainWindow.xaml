@@ -10,7 +10,7 @@
         xmlns:metroDemo="clr-namespace:HettyTools"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:materialDesignConverters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf"
-        Title="HettyTools" Height="800" Width="640" Loaded="MetroWindow_Loaded">
+        Title="HettyTools" Height="640" Width="800" Loaded="MetroWindow_Loaded" KeyDown="MetroWindow_KeyDown">
     <Controls:MetroWindow.LeftWindowCommands>
         <Controls:WindowCommands>
             <Button Click="LaunchNewRelease" ToolTip="Get latest release here">
@@ -196,7 +196,7 @@
 
             <Controls:HamburgerMenu x:Name="HamburgerMenuControl"
                                     HamburgerWidth="48"
-                                    IsPaneOpen="True"
+                                    IsPaneOpen="False"
                                     ItemInvoked="HamburgerMenuControl_OnItemInvoked"
                                     ItemTemplate="{StaticResource MenuItemTemplate}"
                                     OptionsItemTemplate="{StaticResource MenuItemTemplate}"
