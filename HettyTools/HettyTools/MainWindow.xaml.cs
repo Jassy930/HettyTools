@@ -50,7 +50,7 @@ namespace HettyTools
             //GREtimer
 
             GREtimer.Elapsed += new ElapsedEventHandler(GRETimerHandle);
-            GREtimer.Interval = 30000;
+            GREtimer.Interval = 1000;
             GREtimer.Enabled = true;
             GREtimer.Start();
 
@@ -133,9 +133,15 @@ namespace HettyTools
             Properties.Settings.Default.Save();
         }
 
+        int grecounter = 0;
         private void GRETimerHandle(object sender, ElapsedEventArgs e)
         {
-            GREnextHandle(null, null);
+            grecounter++;
+            if (grecounter >= Properties.Settings.Default.GRErefreshtime)
+            {
+                grecounter = 0;
+                GREnextHandle(null, null);
+            }
         }
 
         private void GREyoudao_Click(object sender, RoutedEventArgs e)

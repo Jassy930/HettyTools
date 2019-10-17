@@ -31,6 +31,24 @@ namespace HettyTools
             }
         }
 
+        public int GREintervaltime
+        {
+            get
+            {
+                return Properties.Settings.Default.GRErefreshtime;
+            }
+            set
+            {
+                if (value != Properties.Settings.Default.GRErefreshtime)
+                {
+                    Properties.Settings.Default.GRErefreshtime = value;
+                    Properties.Settings.Default.Save();
+                    NotifyPropertyChanged("GREintervaltime");
+                }
+            }
+        }
+
+
         public event PropertyChangedEventHandler PropertyChanged;
 
 

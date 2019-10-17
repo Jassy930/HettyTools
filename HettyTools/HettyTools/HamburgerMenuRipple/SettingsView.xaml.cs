@@ -15,7 +15,7 @@ namespace HettyTools
         public SettingsView()
         {
             InitializeComponent();
-
+            this.DataContext = new HTViewModel();
             tb_Version.Text="Version:  " +System.Windows.Application.ResourceAssembly.GetName().Version.ToString();
         }
 

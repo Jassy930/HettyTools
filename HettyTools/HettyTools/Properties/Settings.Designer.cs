@@ -46,5 +46,17 @@ namespace HettyTools.Properties {
                 this["Accent"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public int GRErefreshtime {
+            get {
+                return ((int)(this["GRErefreshtime"]));
+            }
+            set {
+                this["GRErefreshtime"] = value;
+            }
+        }
     }
 }
